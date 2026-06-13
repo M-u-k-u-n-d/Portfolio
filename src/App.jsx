@@ -19,17 +19,17 @@ import {
   X,
 } from 'lucide-react';
 import { FaGithub, FaLinkedinIn } from 'react-icons/fa';
-import { SiCodechef, SiCodeforces, SiLeetcode } from 'react-icons/si';
+import { SiCodechef, SiCodeforces, SiHackerrank, SiLeetcode } from 'react-icons/si';
 
 const profile = {
   name: 'Mukund Tiwari',
-  role: 'Frontend Engineer',
+  role: 'Software Engineer',
   tagline:
-    'Frontend-focused software engineer building fast, accessible web experiences with Vue, Nuxt, React, Tailwind CSS, and strong engineering fundamentals.',
+    'Software engineer building accessible Nuxt and Vue experiences alongside secure, scalable Spring Boot APIs.',
   location: 'Bengaluru, India',
   email: 'mukundtiwari251103@gmail.com',
   phone: '+91-721-771-7263',
-  resume: '/mukund-frontend-resume.pdf',
+  resume: '/mukund-tiwari-resume.pdf',
   socials: [
     { label: 'LinkedIn', href: 'https://www.linkedin.com/in/mukund-tiwari-06b433219/', icon: FaLinkedinIn },
     { label: 'GitHub', href: 'https://github.com/M-u-k-u-n-d', icon: FaGithub },
@@ -48,29 +48,44 @@ const navItems = [
 ];
 
 const heroHighlights = [
-  { value: '20%', label: 'faster page loads through payload reduction' },
-  { value: '100%', label: 'Lighthouse accessibility on rideMarket' },
-  { value: '20+', label: 'regional sites tested across devices' },
+  { value: '25+', label: 'REST APIs delivered for enterprise workflows' },
+  { value: '30%', label: 'API response-time improvement on large datasets' },
+  { value: 'WCAG', label: '2.1 AA accessible frontend engineering' },
 ];
 
-const frontendStack = ['Vue 3', 'Nuxt 3', 'React', 'Tailwind CSS', 'UnoCSS', 'Jest', 'Playwright'];
+const frontendStack = ['Vue 3', 'Nuxt 3', 'TypeScript', 'Storybook', 'Spring Boot', 'REST APIs', 'Vitest'];
 
 const experiences = [
   {
-    title: 'Associate Software Engineer',
+    title: 'Associate Software Engineer (Frontend Developer)',
     company: 'Tech Mahindra - VF Corporation Client',
-    period: 'September 2024 - Present',
+    period: 'July 2025 - Present',
     location: 'Bengaluru, India',
-    meta: 'Frontend Engineering | Vue 3, Nuxt 3, Core Web Vitals',
+    meta: 'Nuxt 3 SSR | Vue 3 | TypeScript | Accessibility',
     points: [
-      'Maintain and enhance global brand websites including Vans, The North Face, and Timberland for large-scale user traffic.',
-      'Build and optimize Vue 3 and Nuxt 3 components using UnoCSS and Tailwind CSS for reusable UI patterns.',
-      'Implement SEO and Core Web Vitals improvements, increasing LCP and FID scores across brand pages.',
-      'Collaborate with backend teams to integrate REST APIs, reduce payload size, and improve page load times by 20%.',
-      'Conduct cross-browser testing and responsive QA across 20+ regional sites.',
-      'Write Jest and Playwright tests and participate in code reviews to maintain frontend quality.',
+      'Built features on Canvas, a multi-brand Nuxt 3 SSR e-commerce platform for The North Face, Timberland, and Vans using domain-driven layered architecture with brand and region overrides.',
+      'Developed reusable Vue 3 and TypeScript components following atomic design, documented with Storybook and API-mocked using MSW.',
+      'Ensured WCAG 2.1 AA compliance through semantic HTML5, ARIA roles, keyboard navigation, and focus management.',
+      'Integrated LaunchDarkly feature flags and consumed type-safe REST APIs from OpenAPI and Swagger-generated clients.',
+      'Optimized performance through lazy hydration, Cloudinary images, and Akamai CDN caching.',
+      'Enforced frontend quality using Vitest, ESLint, and SonarQube.',
     ],
-    stack: ['Vue 3', 'Nuxt 3', 'UnoCSS', 'Tailwind CSS', 'SEO', 'Core Web Vitals', 'Jest', 'Playwright'],
+    stack: ['Vue 3', 'Nuxt 3', 'TypeScript', 'Storybook', 'MSW', 'LaunchDarkly', 'WCAG 2.1 AA', 'Vitest'],
+  },
+  {
+    title: 'Associate Software Engineer (Java Backend)',
+    company: 'Tech Mahindra - Blue Shield of California Client',
+    period: 'September 2024 - July 2025',
+    location: 'Bengaluru, India',
+    meta: 'Spring Boot | Microservices | REST APIs',
+    points: [
+      'Developed scalable Spring Boot microservices for a greenfield enterprise healthcare application.',
+      'Designed and delivered 25+ RESTful APIs covering Audit, Contact Management, Role Types, and Eligibility workflows.',
+      'Optimized SQL queries and indexing on datasets with 100K+ records, improving API response time by approximately 30%.',
+      'Implemented JWT authentication and role-based authorization with Spring Security.',
+      'Contributed to API documentation, unit testing, Agile sprint planning, and production-ready deliveries.',
+    ],
+    stack: ['Java', 'Spring Boot', 'Spring Security', 'Microservices', 'REST APIs', 'JWT', 'SQL'],
   },
   {
     title: 'Frontend Developer Intern',
@@ -90,17 +105,51 @@ const experiences = [
 
 const projects = [
   {
+    title: 'QuickHire',
+    date: 'Job Portal',
+    stack: 'Spring Boot, MySQL, Thymeleaf, HTML, CSS, JavaScript',
+    href: 'https://github.com/M-u-k-u-n-d/Jobportal',
+    points: [
+      'Developed a job portal with recruiter and job seeker roles, supporting registration, login, and dashboard-based operations.',
+      'Enabled job posting, resume uploads, WFH and onsite job filters, and profile management with CRUD operations.',
+      'Improved backend performance using optimized database queries and structured RESTful endpoints.',
+    ],
+  },
+  {
+    title: 'KitabSangrah',
+    date: 'Library Management System',
+    stack: 'Spring Boot, React.js, MySQL, Tailwind CSS, JWT',
+    href: 'https://github.com/M-u-k-u-n-d/kitabsangrah-',
+    points: [
+      'Built a full-stack application to manage library books, issue tracking, user authentication, and admin controls.',
+      'Implemented a dynamic React frontend with search, filters, and pagination, secured with JWT authentication.',
+      'Used REST APIs for CRUD operations on books and student profiles, enhancing system usability.',
+    ],
+  },
+  {
+    title: 'NotesLock',
+    date: 'Secure Notes Platform',
+    stack: 'Spring Boot, React.js, JWT, Tailwind CSS, MySQL',
+    href: 'https://github.com/M-u-k-u-n-d/notesLock',
+    points: [
+      'Built a secure note-taking application with JWT authentication and Spring Security.',
+      'Implemented complete create, read, update, and delete workflows with a responsive React and Tailwind CSS interface.',
+      'Added real-time feedback, global exception handling, validation, and pagination.',
+      'Optimized MySQL queries and indexing, improving data retrieval performance by approximately 35%.',
+    ],
+  },
+  {
     title: 'rideMarket',
     date: 'Aug 2025 - Sep 2025',
     stack: 'Nuxt 3, Supabase, Tailwind CSS, PostgreSQL',
     href: 'https://github.com/M-u-k-u-n-d/rideMarket',
     points: [
       'Designed and developed a car rental platform with dynamic filtering by city, make, and price using Nuxt 3.',
-      'Integrated Supabase authentication with email/password and OAuth for secure session management.',
+      'Integrated Supabase authentication with email/password and OAuth for secure user session management.',
       'Used PostgreSQL to store car details, images, and booking data with relational integrity.',
-      'Implemented an image upload and retrieval pipeline to improve admin dashboard usability.',
+      'Implemented an image upload and retrieval pipeline to improve dashboard usability for admin users.',
       'Built a responsive Tailwind CSS interface achieving a 100% Lighthouse accessibility score.',
-      'Deployed with SEO-friendly server-side rendering for faster page loads and better ranking potential.',
+      'Deployed with SEO-friendly server-side rendering for faster page loads and better rankings.',
     ],
   },
   {
@@ -109,11 +158,11 @@ const projects = [
     stack: 'Vue.js, Pinia, Firebase, Tailwind CSS, Cloudinary',
     href: 'https://github.com/M-u-k-u-n-d/stoneStore',
     points: [
-      'Built a stone catalog platform with full create, read, update, and delete functionality for listings.',
+      'Built a full-featured stone catalog platform with CRUD functionality for stone listings.',
       'Integrated Firebase for authentication, real-time database updates, and secure data storage.',
       'Used Cloudinary to store and deliver optimized images, reducing image load time by 35%.',
-      'Managed global application state with Pinia to improve reactivity and maintainability.',
-      'Designed a responsive Tailwind CSS interface for smooth experiences across device sizes.',
+      'Managed global application state using Pinia, improving component reactivity and maintainability.',
+      'Designed a responsive, mobile-friendly Tailwind CSS interface for a smooth experience across devices.',
       'Deployed with production-ready configuration for a seamless user experience.',
     ],
   },
@@ -123,32 +172,32 @@ const skillGroups = [
   {
     title: 'Languages',
     icon: Code2,
-    skills: ['Java', 'JavaScript', 'C++', 'SQL'],
+    skills: ['Java', 'JavaScript', 'TypeScript', 'C++', 'SQL', 'Python'],
   },
   {
-    title: 'Frontend',
+    title: 'Frameworks and Tech',
     icon: Server,
-    skills: ['React.js', 'Vue.js', 'Nuxt.js', 'Tailwind CSS', 'UnoCSS', 'Bootstrap'],
+    skills: ['Spring Boot', 'Spring Security', 'Vue 3', 'Nuxt 3', 'React.js', 'Pinia', 'Tailwind CSS', 'UnoCSS'],
   },
   {
-    title: 'Backend and Data',
+    title: 'APIs and Data',
     icon: Database,
-    skills: ['Spring Boot', 'REST APIs', 'JWT', 'Supabase', 'Firebase', 'MySQL', 'PostgreSQL'],
+    skills: ['REST APIs', 'JWT', 'Microservices', 'SSR', 'MySQL', 'Supabase', 'Firebase'],
   },
   {
     title: 'Tools',
     icon: Wrench,
-    skills: ['Git', 'Postman', 'VS Code', 'IntelliJ', 'Figma', 'GitHub'],
+    skills: ['Git', 'Azure DevOps', 'LaunchDarkly', 'Postman', 'VS Code', 'Figma', 'SonarQube', 'ESLint'],
   },
   {
-    title: 'Frontend Quality',
+    title: 'Frontend Quality and Testing',
     icon: Layers3,
-    skills: ['SEO', 'Core Web Vitals', 'Responsive QA', 'Cross-browser Testing', 'Jest', 'Playwright'],
+    skills: ['WCAG 2.1', 'SEO', 'Storybook', 'Vitest', 'MSW', 'CI/CD', 'Agile/Scrum'],
   },
   {
-    title: 'Core CS',
+    title: 'Core Competencies',
     icon: TerminalSquare,
-    skills: ['DSA', 'OOPS', 'DBMS', 'Operating Systems', 'Computer Networks'],
+    skills: ['DSA', 'OOP', 'DBMS', 'Domain-Driven Design', 'Atomic Design', 'Accessibility'],
   },
 ];
 
@@ -181,6 +230,12 @@ const achievements = [
     detail: 'Maximum rating 1698 on CodeChef.',
     href: 'https://www.codechef.com/users/thrive_01',
     icon: SiCodechef,
+  },
+  {
+    title: 'HackerRank',
+    detail: 'Achieved 5⭐ in Java and Problem Solving.',
+    href: 'https://www.hackerrank.com/profile/Mukund2012056',
+    icon: SiHackerrank,
   },
 ];
 
@@ -288,10 +343,10 @@ function Hero() {
       <div className={`${containerClass} grid gap-10 lg:grid-cols-[1.08fr_0.92fr] lg:items-center`}>
         <div>
           <p className="mb-5 text-xs font-extrabold uppercase tracking-[0.18em] text-orange-700">
-            Frontend Engineer | Vue | Nuxt | React
+            Software Engineer | Nuxt | Vue | Spring Boot
           </p>
           <h1 className="max-w-4xl font-['Space_Grotesk'] text-5xl font-bold leading-[0.96] tracking-normal text-slate-950 transition-colors dark:text-white sm:text-6xl lg:text-7xl">
-            Building fast, accessible interfaces for modern web products.
+            Building accessible storefronts and scalable enterprise APIs.
           </h1>
           <p className="mt-6 max-w-2xl text-lg leading-8 text-slate-600 dark:text-slate-300">{profile.tagline}</p>
 
@@ -320,7 +375,7 @@ function Hero() {
             </span>
             <span className="inline-flex items-center gap-2">
               <Server size={16} />
-              Vue 3, Nuxt 3, React, Tailwind
+              Nuxt 3, Vue 3, TypeScript, Spring Boot
             </span>
           </div>
         </div>
@@ -374,10 +429,10 @@ function ExperienceSection() {
       <div className={containerClass}>
         <SectionHeader
           kicker="Experience"
-          title="Frontend engineering for brand sites, performance, and product UI"
-          description="A focused timeline of Vue, Nuxt, React, SEO, Core Web Vitals, and responsive quality work."
+          title="Engineering across accessible commerce and enterprise APIs"
+          description="A focused timeline of Nuxt and Vue storefront development, accessibility, Spring Boot microservices, and performance work."
         />
-        <div className="grid gap-5">
+        <div className="grid gap-5 lg:grid-cols-2">
           {experiences.map((item) => (
             <article
               className="rounded-lg border border-slate-200 bg-white p-6 shadow-xl shadow-slate-900/5 transition-colors dark:border-white/10 dark:bg-slate-900/80 dark:shadow-black/20"
@@ -415,10 +470,10 @@ function ProjectsSection() {
       <div className={containerClass}>
         <SectionHeader
           kicker="Projects"
-          title="Frontend projects with real product workflows"
-          description="Projects from the frontend resume covering SSR, authentication, image delivery, and responsive UI."
+          title="Projects built across frontend, backend, and full-stack systems"
+          description="Selected work spanning accessible interfaces, secure APIs, authentication, SSR, performance optimization, and real-world product workflows."
         />
-        <div className="grid gap-5 lg:grid-cols-2">
+        <div className="grid gap-5">
           {projects.map((project) => (
             <article
               className="flex min-h-full flex-col rounded-lg border border-slate-200 bg-white p-6 shadow-xl shadow-slate-900/5 transition-colors dark:border-white/10 dark:bg-slate-900/80 dark:shadow-black/20"
@@ -460,8 +515,8 @@ function SkillsSection() {
       <div className={containerClass}>
         <SectionHeader
           kicker="Skills"
-          title="A frontend toolkit backed by strong engineering fundamentals"
-          description="Organized for faster scanning instead of long flat lists."
+          title="A balanced frontend and backend engineering toolkit"
+          description="Technologies and competencies from accessible UI engineering through secure microservice development."
         />
         <div className="grid gap-5 md:grid-cols-2 xl:grid-cols-3">
           {skillGroups.map(({ title, icon: Icon, skills }) => (
@@ -527,7 +582,7 @@ function AchievementsSection() {
           title="Competitive programming profiles"
           description="Problem-solving milestones that support frontend engineering with strong algorithmic thinking."
         />
-        <div className="grid gap-5 md:grid-cols-3">
+        <div className="grid gap-5 md:grid-cols-2 xl:grid-cols-4">
           {achievements.map(({ title, detail, href, icon: Icon }) => (
             <a
               className="group rounded-lg border border-slate-200 bg-white p-6 shadow-xl shadow-slate-900/5 transition hover:-translate-y-1 hover:border-teal-200 hover:shadow-2xl hover:shadow-teal-900/10 dark:border-white/10 dark:bg-slate-900/80 dark:shadow-black/20 dark:hover:border-teal-300/40"
@@ -573,7 +628,7 @@ function ContactSection() {
             Let's build something useful
           </h2>
           <p className="mt-4 max-w-2xl text-lg leading-8 text-slate-300">
-            Open to frontend engineering roles, Vue/Nuxt work, React projects, and performance-focused UI teams.
+            Open to software engineering roles spanning Vue/Nuxt frontend work, accessibility, and Java backend systems.
           </p>
         </div>
         <div className="grid gap-3 md:grid-cols-2">
