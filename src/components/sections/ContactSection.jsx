@@ -4,7 +4,7 @@ import { containerClass } from '../../config/layout';
 import { profile } from '../../data/profile';
 
 const contactLinks = [
-  { label: profile.phone, href: `tel:${profile.phone.replaceAll('-', '')}`, icon: Phone },
+  { label: profile.phone, href: `tel:${profile.phone.replace(/[^\d+]/g, '')}`, icon: Phone },
   { label: profile.email, href: `mailto:${profile.email}`, icon: Mail },
   { label: 'linkedin.com/in/mukund-tiwari-06b433219', href: profile.socials[0].href, icon: FaLinkedinIn },
   { label: 'github.com/M-u-k-u-n-d', href: profile.socials[1].href, icon: FaGithub },

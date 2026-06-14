@@ -8,7 +8,7 @@ export const profile = {
     'Software engineer building accessible Nuxt and Vue experiences alongside secure, scalable Spring Boot APIs.',
   location: 'Bengaluru, India',
   email: 'mukundtiwari251103@gmail.com',
-  phone: '+91-721-771-7263',
+  phone: '+91 72177 17263',
   resume: '/mukund-tiwari-resume.pdf',
   socials: [
     { label: 'LinkedIn', href: 'https://www.linkedin.com/in/mukund-tiwari-06b433219/', icon: FaLinkedinIn },

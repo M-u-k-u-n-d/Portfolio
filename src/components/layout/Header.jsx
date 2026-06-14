@@ -21,6 +21,24 @@ export default function Header({ theme, onToggleTheme }) {
     return () => observer.disconnect();
   }, []);
 
+  useEffect(() => {
+    if (!menuOpen) return undefined;
+
+    const previousOverflow = document.body.style.overflow;
+    document.body.style.overflow = 'hidden';
+
+    const closeOnEscape = (event) => {
+      if (event.key === 'Escape') setMenuOpen(false);
+    };
+
+    window.addEventListener('keydown', closeOnEscape);
+
+    return () => {
+      document.body.style.overflow = previousOverflow;
+      window.removeEventListener('keydown', closeOnEscape);
+    };
+  }, [menuOpen]);
+
   const scrollToSection = (id) => {
     const section = document.getElementById(id);
     const header = document.querySelector('[data-site-header]');
@@ -39,11 +57,12 @@ export default function Header({ theme, onToggleTheme }) {
   };
 
   return (
-    <header
-      data-site-header
-      className="sticky top-0 z-50 border-b border-slate-900/10 bg-white/90 px-4 py-3 font-['Inter'] shadow-sm backdrop-blur-xl transition-colors dark:border-white/10 dark:bg-slate-950/90 sm:px-6 lg:px-8"
-    >
-      <div className="mx-auto grid max-w-6xl grid-cols-[auto_1fr_auto_auto] items-center gap-3 lg:gap-6">
+    <>
+      <header
+        data-site-header
+        className="sticky top-0 z-50 border-b border-slate-900/10 bg-white/90 px-4 py-3 font-['Inter'] shadow-sm backdrop-blur-xl transition-colors dark:border-white/10 dark:bg-slate-950/90 sm:px-6 lg:px-8"
+      >
+        <div className="mx-auto grid max-w-6xl grid-cols-[auto_1fr_auto_auto] items-center gap-3 lg:gap-6">
         <button
           type="button"
           className="flex items-center gap-3 text-left font-['Space_Grotesk'] text-base font-bold text-slate-950 dark:text-white"
@@ -53,12 +72,7 @@ export default function Header({ theme, onToggleTheme }) {
           <span className="hidden sm:inline">{profile.name}</span>
         </button>
 
-        <nav
-          className={`absolute left-4 right-4 top-[calc(100%+0.5rem)] rounded-xl border border-slate-200 bg-white p-2 shadow-2xl dark:border-white/10 dark:bg-slate-900 lg:static lg:flex lg:justify-center lg:border-0 lg:bg-transparent lg:p-0 lg:shadow-none lg:dark:bg-transparent ${
-            menuOpen ? 'grid' : 'hidden'
-          }`}
-          aria-label="Primary navigation"
-        >
+        <nav className="hidden justify-center lg:flex" aria-label="Primary navigation">
           {navItems.map(([id, label]) => (
             <button
               key={id}
@@ -102,7 +116,56 @@ export default function Header({ theme, onToggleTheme }) {
         >
           {menuOpen ? <X size={20} /> : <Menu size={20} />}
         </button>
-      </div>
-    </header>
+        </div>
+      </header>
+
+      {menuOpen ? (
+        <div
+          className="fixed inset-0 z-[100] flex min-h-dvh items-center justify-center bg-slate-950/80 p-5 backdrop-blur-md lg:hidden"
+          role="presentation"
+          onClick={() => setMenuOpen(false)}
+        >
+          <nav
+            className="relative grid w-full max-w-sm gap-2 rounded-2xl border border-white/15 bg-white p-5 shadow-2xl dark:bg-slate-900"
+            aria-label="Mobile navigation"
+            aria-modal="true"
+            role="dialog"
+            onClick={(event) => event.stopPropagation()}
+          >
+            <div className="mb-3 flex items-center justify-between">
+              <div>
+                <span className="font-['Space_Grotesk'] text-lg font-bold text-slate-950 dark:text-white">
+                  {profile.name}
+                </span>
+                <p className="text-sm text-slate-500 dark:text-slate-400">{profile.role}</p>
+              </div>
+              <button
+                className="grid size-10 place-items-center rounded-full border border-slate-200 text-slate-700 dark:border-white/15 dark:text-slate-200"
+                type="button"
+                aria-label="Close navigation menu"
+                onClick={() => setMenuOpen(false)}
+              >
+                <X size={20} />
+              </button>
+            </div>
+
+            {navItems.map(([id, label]) => (
+              <button
+                key={id}
+                className={`rounded-lg px-4 py-3 text-left text-base font-bold transition ${
+                  activeSection === id
+                    ? 'bg-teal-50 text-teal-700 dark:bg-teal-400/15 dark:text-teal-300'
+                    : 'text-slate-700 hover:bg-slate-100 dark:text-slate-200 dark:hover:bg-white/10'
+                }`}
+                type="button"
+                onClick={() => scrollToSection(id)}
+              >
+                {label}
+              </button>
+            ))}
+          </nav>
+        </div>
+      ) : null}
+    </>
   );
 }
