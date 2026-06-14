@@ -1,0 +1,47 @@
+export const experiences = [
+  {
+    title: 'Associate Software Engineer (Frontend Developer)',
+    company: 'Tech Mahindra - VF Corporation Client',
+    period: 'July 2025 - Present',
+    location: 'Bengaluru, India',
+    meta: 'Nuxt 3 SSR | Vue 3 | TypeScript | Accessibility',
+    points: [
+      'Built features on Canvas, a multi-brand Nuxt 3 SSR e-commerce platform for The North Face, Timberland, and Vans using domain-driven layered architecture with brand and region overrides.',
+      'Developed reusable Vue 3 and TypeScript components following atomic design, documented with Storybook and API-mocked using MSW.',
+      'Ensured WCAG 2.1 AA compliance through semantic HTML5, ARIA roles, keyboard navigation, and focus management.',
+      'Integrated LaunchDarkly feature flags and consumed type-safe REST APIs from OpenAPI and Swagger-generated clients.',
+      'Optimized performance through lazy hydration, Cloudinary images, and Akamai CDN caching.',
+      'Enforced frontend quality using Vitest, ESLint, and SonarQube.',
+    ],
+    stack: ['Vue 3', 'Nuxt 3', 'TypeScript', 'Storybook', 'MSW', 'LaunchDarkly', 'WCAG 2.1 AA', 'Vitest'],
+  },
+  {
+    title: 'Associate Software Engineer (Java Backend)',
+    company: 'Tech Mahindra - Blue Shield of California Client',
+    period: 'September 2024 - July 2025',
+    location: 'Bengaluru, India',
+    meta: 'Spring Boot | Microservices | REST APIs',
+    points: [
+      'Developed scalable Spring Boot microservices for a greenfield enterprise healthcare application.',
+      'Designed and delivered 25+ RESTful APIs covering Audit, Contact Management, Role Types, and Eligibility workflows.',
+      'Optimized SQL queries and indexing on datasets with 100K+ records, improving API response time by approximately 30%.',
+      'Implemented JWT authentication and role-based authorization with Spring Security.',
+      'Contributed to API documentation, unit testing, Agile sprint planning, and production-ready deliveries.',
+    ],
+    stack: ['Java', 'Spring Boot', 'Spring Security', 'Microservices', 'REST APIs', 'JWT', 'SQL'],
+  },
+  {
+    title: 'Frontend Developer Intern',
+    company: 'Ava Intern',
+    period: 'January 2024 - March 2024',
+    location: 'Remote',
+    meta: 'React and JavaScript',
+    points: [
+      'Developed 15+ React applications using modern JavaScript and practical UI patterns.',
+      'Implemented infinite scroll, debouncing, throttling, state optimization, and dynamic rendering techniques.',
+      'Reduced component load time by 30% through state optimization techniques.',
+      'Enhanced UX metrics by 25% through dynamic rendering strategies.',
+    ],
+    stack: ['React.js', 'JavaScript', 'Performance Optimization', 'Dynamic Rendering', 'UX Metrics'],
+  },
+];
